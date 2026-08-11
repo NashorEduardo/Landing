@@ -1,0 +1,196 @@
+---
+---
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="tag-dot"></span>&nbsp; Expediciones Andinas · Cusco & Machu Picchu 2025–2026</p>
+      <h1 class="hero-title">
+        Cusco no se visita.<br />
+        <span class="accent">Se vive en la cima</span> del mundo inca.
+      </h1>
+      <p class="hero-sub">
+        5 días y 4 noches explorando calles empedradas milenarias, valles sagrados
+        y la majestuosidad mística de Machu Picchu al amanecer. Hoteles boutique, tren panorámico Vistadome y guías expertos locales.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#reservar" class="btn btn-primary">Quiero mi cupo en Cusco</a>
+        <a href="#itinerario" class="btn btn-ghost">Ver itinerario completo</a>
+      </div>
+
+      <div class="hero-meta">
+        <div>
+          <div class="stars">★★★★★</div>
+          <span>4.9/5 en 420+ expediciones</span>
+        </div>
+        <div class="divider" aria-hidden="true"></div>
+        <div>
+          <strong>16 cupos</strong>
+          <span>máximo por salida grupal</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-postcard">
+      <div class="postcard">
+        <div class="postcard-image-wrap">
+          <img 
+            src="https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=1000&auto=format&fit=crop" 
+            alt="Machu Picchu al amanecer con niebla entre las montañas andinas" 
+            class="postcard-art"
+          />
+          <div class="postcard-badge-overlay">
+            <span>Valle Sagrado & Machu Picchu</span>
+          </div>
+        </div>
+
+        <div class="postcard-stamp">
+          <span class="stamp-price">$899</span>
+          <span class="stamp-label">USD · todo incluido</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-bg" aria-hidden="true"></div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding-block: clamp(64px, 9vw, 120px);
+    overflow: clip;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(60% 50% at 85% 15%, rgba(16, 185, 129, 0.18), transparent),
+      radial-gradient(50% 45% at 10% 85%, rgba(251, 191, 36, 0.15), transparent),
+      linear-gradient(180deg, rgba(2, 44, 34, 0.7) 0%, var(--ink) 100%);
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: 52px;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: clamp(2.6rem, 5.6vw, 4.2rem);
+    line-height: 1.08;
+    margin-top: 18px;
+  }
+
+  .accent {
+    font-style: italic;
+    color: var(--mustard);
+    background: linear-gradient(135deg, var(--mustard), var(--mint));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    margin-top: 22px;
+    max-width: 48ch;
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 44px;
+    font-family: var(--font-body);
+  }
+  .hero-meta div:not(.divider) { display: flex; flex-direction: column; gap: 2px; }
+  .hero-meta strong { font-size: 1.1rem; font-family: var(--font-display); color: #FFF; }
+  .hero-meta span { font-size: 0.85rem; color: var(--ink-soft); }
+  .divider { width: 1px; height: 36px; background: rgba(255,255,255,0.2); }
+
+  .hero-postcard {
+    display: flex;
+    justify-content: center;
+  }
+
+  .postcard {
+    position: relative;
+    width: min(460px, 92vw);
+    transform: rotate(2deg);
+    transition: transform 0.4s ease;
+  }
+  .postcard:hover {
+    transform: rotate(0deg) scale(1.02);
+  }
+
+  .postcard-image-wrap {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 10px solid #FFF;
+    box-shadow: 0 35px 70px rgba(0,0,0,0.5);
+  }
+
+  .postcard-art {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+  }
+
+  .postcard-badge-overlay {
+    position: absolute;
+    bottom: 0;
+    inset-x: 0;
+    padding: 24px 20px 16px;
+    background: linear-gradient(0deg, rgba(2,44,34,0.9) 0%, transparent 100%);
+    color: var(--cream);
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .postcard-stamp {
+    position: absolute;
+    top: -24px;
+    right: -20px;
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    background: #022C22;
+    border: 3px dashed var(--mustard);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-10deg);
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  }
+  .stamp-price {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.45rem;
+    color: var(--mustard);
+  }
+  .stamp-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.05em;
+    color: var(--cream);
+    padding-inline: 6px;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 900px) {
+    .hero-grid { grid-template-columns: 1.1fr 0.9fr; }
+  }
+</style>

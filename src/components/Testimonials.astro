@@ -1,0 +1,168 @@
+---
+const quotes = [
+  {
+    text: '"No imaginé que Cusco fuera tan mágica. El tren Vistadome a Machu Picchu y el guía privado fueron lo mejor del viaje. ¡Volvería mil veces!"',
+    name: 'Valentina M.',
+    from: 'Viajó desde Bogotá con su pareja',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop',
+  },
+  {
+    text: '"El hotel boutique estaba increíble — a 5 minutos caminando de la Plaza de Armas. Y el asesor de Next Trip estuvo disponible todo el tiempo, eso da mucha tranquilidad."',
+    name: 'Rodrigo T.',
+    from: 'Viajó desde Ciudad de México',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop',
+  },
+  {
+    text: '"Por $899 USD recibí un trato de lujo. La cena maridaje andina fue la sorpresa más linda del viaje. Lo recomiendo sin dudarlo."',
+    name: 'Camila R.',
+    from: 'Viajó desde Lima',
+    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop',
+  },
+];
+---
+
+<section class="section testimonials" id="voces">
+  <div class="wrap">
+    <div class="section-head text-center">
+      <p class="eyebrow"><span class="tag-dot"></span>&nbsp; Lo que dicen quienes ya fueron</p>
+      <h2>Ellos Ya Vivieron Cusco con Next Trip</h2>
+    </div>
+
+    <div class="quote-grid">
+      {quotes.map((q) => (
+        <figure class="quote-card">
+          <div class="avatar-wrapper">
+            <img src={q.avatar} alt={q.name} class="avatar-img" />
+          </div>
+          <div class="stars">★★★★★</div>
+          <blockquote>{q.text}</blockquote>
+          <figcaption>
+            <strong>{q.name}</strong>
+            <span>{q.from}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+  <div class="testimonials-bg" aria-hidden="true"></div>
+</section>
+
+<style>
+  .testimonials {
+    position: relative;
+    padding-block: clamp(80px, 11vw, 140px);
+    overflow: hidden;
+    background-color: #022C22;
+  }
+
+  .testimonials-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: 
+      linear-gradient(180deg, rgba(2, 44, 34, 0.9) 0%, rgba(2, 44, 34, 0.96) 50%, rgba(2, 44, 34, 0.98) 100%),
+      url('https://images.unsplash.com/photo-1589556264800-03c0ca61864b?q=80&w=1600&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .section-head {
+    max-width: 700px;
+    margin-inline: auto;
+    margin-bottom: 64px;
+    text-align: center;
+  }
+  .section-head h2 {
+    margin-top: 14px;
+    font-size: clamp(2.1rem, 4.2vw, 3.2rem);
+    line-height: 1.12;
+    color: var(--cream);
+  }
+
+  .quote-grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr;
+  }
+
+  .quote-card {
+    position: relative;
+    margin: 40px 0 0 0;
+    background: #FFF;
+    color: #022C22;
+    border-radius: var(--radius-md);
+    padding: 50px 32px 36px 32px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    transition: transform 0.3s ease;
+  }
+  .quote-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .avatar-wrapper {
+    position: absolute;
+    top: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    padding: 3px;
+    background: #FFF;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .stars {
+    color: #FBBF24;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    margin-top: 4px;
+  }
+
+  .quote-card blockquote {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: #334155;
+  }
+
+  .quote-card figcaption {
+    margin-top: 8px;
+    border-top: 1px solid #E2E8F0;
+    width: 100%;
+    padding-top: 16px;
+  }
+
+  .quote-card figcaption strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: #022C22;
+  }
+
+  .quote-card figcaption span {
+    display: block;
+    color: #64748B;
+    font-size: 0.82rem;
+    margin-top: 2px;
+  }
+
+  @media (min-width: 860px) {
+    .quote-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

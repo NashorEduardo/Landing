@@ -1,0 +1,101 @@
+---
+---
+<div class="top-bar">
+  ⛰️ Salidas confirmadas 2025 y 2026 — Cupos limitados por expedición
+</div>
+<header class="header">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo" aria-label="Next Trip, ir al inicio">
+      <div class="logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m3 20 9-16 9 16H3z"/>
+        </svg>
+      </div>
+      <span>Next Trip <small>Andes</small></span>
+    </a>
+
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#viaje">Expedición</a>
+      <a href="#itinerario">Itinerario</a>
+      <a href="#voces">Viajeros</a>
+      <a href="#preguntas">FAQ</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#reservar" class="btn btn-primary header-cta">Reservar cupo</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(2, 44, 34, 0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 16px;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--cream);
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  .logo small {
+    font-size: 0.7rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--mustard);
+    background: rgba(251, 191, 36, 0.15);
+    padding: 3px 8px;
+    border-radius: 999px;
+  }
+
+  .logo-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--mustard), var(--emerald-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #022C22;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+  }
+
+  .nav {
+    display: none;
+    gap: 36px;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    transition: color 0.2s ease;
+  }
+  .nav a:hover { color: var(--mustard); }
+
+  .header-cta { padding: 10px 22px; font-size: 0.88rem; }
+
+  @media (min-width: 860px) {
+    .nav { display: flex; }
+  }
+</style>

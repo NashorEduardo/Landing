@@ -1,0 +1,89 @@
+---
+---
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="logo-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 20 9-16 9 16H3z"/>
+          </svg>
+        </div>
+        <span class="logo-text">Next Trip Andes</span>
+      </div>
+      <p>Expediciones exclusivas en grupos reducidos a Cusco y Machu Picchu. Diseñadas por expertos locales.</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Enlaces del pie de página">
+      <a href="#viaje">Expedición</a>
+      <a href="#itinerario">Itinerario</a>
+      <a href="#voces">Viajeros</a>
+      <a href="#preguntas">FAQ</a>
+    </nav>
+
+    <p class="footer-legal">© {new Date().getFullYear()} Next Trip Expediciones. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding-top: 60px;
+    border-top: 1px solid rgba(16, 185, 129, 0.2);
+    background: #011A14;
+  }
+  .footer-inner {
+    padding-block: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--mustard), var(--emerald-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #022C22;
+  }
+  .logo-text {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .footer-brand p {
+    margin-top: 12px;
+    max-width: 40ch;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .footer-links a { text-decoration: none; color: var(--ink-soft); transition: color 0.2s; }
+  .footer-links a:hover { color: var(--mustard); }
+  .footer-legal {
+    font-size: 0.8rem;
+    color: rgba(240,253,244,0.4);
+  }
+
+  @media (min-width: 780px) {
+    .footer-inner {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+</style>

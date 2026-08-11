@@ -1,0 +1,172 @@
+---
+const days = [
+  { d: '01', title: 'Llegada y aclimatación', text: 'Recepción en el aeropuerto de Cusco, traslado al hotel boutique y mate de coca de bienvenida en la Plaza de Armas.' },
+  { d: '02', title: 'Valle Sagrado de los Incas', text: 'Visita a los mercados artesanales de Pisac, almuerzo campestre andino y la imponente fortaleza de Ollantaytambo.' },
+  { d: '03', title: 'Machu Picchu Mágico', text: 'Viaje en tren panorámico Vistadome por el cañón del Urubamba y tour guiado privado por la ciudadela inca.' },
+  { d: '04', title: 'Maras, Moray & Cusco Imperial', text: 'Exploración de las salineras incas, laboratorios agrícolas circulares de Moray y tarde libre en el barrio de San Blas.' },
+  { d: '05', title: 'Despedida andina', text: 'Compra de artesanías locales de alpaca, última caminata por el Centro Histórico y traslado al aeropuerto.' },
+];
+
+const includes = [
+  'Vuelos redondos a Cusco (opcional desde Lima/Bogotá)',
+  '4 noches en hotel boutique colonial 4 estrellas',
+  'Desayunos andinos diarios + 3 almuerzos típicos',
+  'Tren Vistadome a Machu Picchu i/v',
+  'Entradas prioritarias a Machu Picchu y Valle Sagrado',
+  'Guía experto oficial bilingüe todo el recorrido',
+];
+---
+
+<section class="section" id="itinerario">
+  <div class="wrap">
+    <div class="section-head text-center">
+      <p class="eyebrow"><span class="tag-dot"></span>&nbsp; La ruta imperial</p>
+      <h2>Tu pase de abordar para 5 días en el corazón del imperio</h2>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-main">
+        <ol class="day-list">
+          {days.map((day) => (
+            <li>
+              <span class="day-num">{day.d}</span>
+              <div>
+                <h3>{day.title}</h3>
+                <p>{day.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="ticket-stub">
+        <div class="stub-top">
+          <span class="eyebrow" style="color: var(--mustard);">Next Trip · Pase Andino</span>
+          <div class="stub-route">
+            <span>LIM / BOG</span>
+            <svg width="28" height="14" viewBox="0 0 26 14" fill="none"><path d="M1 7h22m0 0-6-6m6 6-6 6" stroke="var(--mustard)" stroke-width="1.8"/></svg>
+            <span>CUZ</span>
+          </div>
+          <p class="stub-dates">5 días · 4 noches — salidas 2025 y 2026</p>
+        </div>
+
+        <ul class="stub-includes">
+          {includes.map((line) => <li>{line}</li>)}
+        </ul>
+
+        <div class="stub-price">
+          <span>Precio especial</span>
+          <strong>$899 <small>USD</small></strong>
+          <span class="stub-fine">por persona, ocupación doble</span>
+        </div>
+
+        <a href="#reservar" class="btn btn-primary stub-cta">Apartar mi cupo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-head {
+    max-width: 700px;
+    margin-inline: auto;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+  .section-head h2 {
+    margin-top: 14px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.12;
+  }
+
+  .ticket {
+    display: grid;
+    background: linear-gradient(135deg, #FFFFFF, #F0FDF4);
+    color: var(--ink);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 45px 90px rgba(0,0,0,0.5);
+  }
+
+  .ticket-main { padding: 48px 36px; }
+
+  .day-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 30px; }
+  .day-list li { display: flex; gap: 20px; align-items: flex-start; }
+  .day-num {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--emerald-light);
+    line-height: 1;
+    min-width: 48px;
+  }
+  .day-list h3 { font-size: 1.15rem; margin-bottom: 6px; color: #022C22; }
+  .day-list p { color: #334155; font-size: 0.95rem; }
+
+  .ticket-stub {
+    background: linear-gradient(160deg, #064E3B 0%, #022C22 100%);
+    color: var(--cream);
+    padding: 40px 32px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .ticket-stub::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1px;
+    height: 100%;
+    border-left: 2px dashed rgba(255,255,255,0.25);
+  }
+
+  .stub-route {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 10px;
+    color: var(--mustard);
+  }
+  .stub-dates { margin-top: 8px; font-size: 0.85rem; color: var(--mint); }
+
+  .stub-includes {
+    list-style: none;
+    margin: 0;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.9rem;
+  }
+  .stub-includes li { padding-left: 20px; position: relative; color: var(--cream); }
+  .stub-includes li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--mustard);
+    box-shadow: 0 0 8px var(--mustard);
+  }
+
+  .stub-price { display: flex; flex-direction: column; }
+  .stub-price span:first-child { font-size: 0.8rem; color: var(--mint); text-transform: uppercase; letter-spacing: 0.08em; }
+  .stub-price strong { font-family: var(--font-display); font-size: 2.4rem; color: var(--mustard); }
+  .stub-price small { font-size: 1.1rem; font-weight: 600; }
+  .stub-fine { font-size: 0.75rem; color: var(--mint); margin-top: 2px; }
+
+  .stub-cta { justify-content: center; width: 100%; }
+
+  @media (min-width: 900px) {
+    .ticket { grid-template-columns: 1.6fr 1fr; }
+    .ticket-main { padding: 56px; }
+  }
+</style>
