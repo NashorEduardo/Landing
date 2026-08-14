@@ -1,22 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import Highlights from '../components/Highlights.astro';
-import Itinerary from '../components/Itinerary.astro';
-import Testimonials from '../components/Testimonials.astro';
-import FAQ from '../components/FAQ.astro';
-import FinalCTA from '../components/FinalCTA.astro';
-import Footer from '../components/Footer.astro';
+import Reviews from '../components/Reviews.astro';
+const itinerary = [['01','Lima te da la bienvenida','Recepción en el aeropuerto Jorge Chávez y traslado privado a tu hotel en Miraflores.'],['02','Paracas, Ica y Huacachina','Islas Ballestas, degustación de vinos y piscos, y aventura en el oasis del desierto.'],['03','Rumbo a Cusco','Vuelo Lima - Cusco, asistencia personalizada y tiempo para aclimatarte al corazón andino.'],['04','El Valle Sagrado','Pisac, Urubamba, Ollantaytambo y tren turístico rumbo a Aguas Calientes.'],['05','Machu Picchu','Visita guiada privada a la maravilla del mundo y regreso en tren a Cusco.'],['06','Laguna Humantay','Trekking entre los Andes hasta el tesoro turquesa de Salkantay.'],['07','Montaña de 7 Colores','Una experiencia memorable sobre los 5,000 m s. n. m. en Vinicunca.'],['08','Hasta pronto, Perú','Desayuno, traslado privado y vuelo Cusco - Lima para tu conexión final.']];
+const included = ['Vuelos internos Lima - Cusco - Lima con equipaje de 23 kg','7 noches de hotel','Transporte turístico y guiado profesional','7 desayunos y 3 almuerzos','Entradas a los centros arqueológicos descritos','Guiado privado en Machu Picchu'];
 ---
-
-<Layout title="Cartagena Costera — 5 días / 4 noches desde $899 USD | Litoral">
-  <Header />
-  <Hero />
-  <Highlights />
-  <Itinerary />
-  <Testimonials />
-  <FAQ />
-  <FinalCTA />
-  <Footer />
-</Layout>
+<Layout title="Perú Tradicional | 8 días y 7 noches | Perú Beyond" description="Un viaje de 8 días y 7 noches por Lima, Paracas, Cusco, Machu Picchu, Humantay y Vinicunca.">
+<header class="site-header"><a class="brand" href="#inicio" aria-label="Perú Beyond, inicio"><span class="brand-mark">PB</span><span>PERÚ <b>BEYOND</b></span></a><nav aria-label="Navegación principal"><a href="#experiencia">Experiencia</a><a href="#itinerario">Itinerario</a><a href="#precios">Precios</a></nav><a class="header-cta" href="#contacto">Cotizar viaje <span>↗</span></a></header>
+<main id="inicio">
+<section class="hero"><div class="hero-photo" role="img" aria-label="Paisaje andino del Perú"></div><div class="hero-overlay"></div><div class="hero-content shell"><p class="kicker light">Perú tradicional · 08 días / 07 noches</p><h1>Viajes que van<br /><em>más allá</em> del destino.</h1><p class="hero-copy">De la costa del Pacífico a las cumbres andinas: una ruta diseñada para conectar con el Perú de verdad.</p><div class="hero-actions"><a class="button button-sand" href="#precios">Ver programa y precios <span>↓</span></a><a class="text-link" href="#itinerario">Conoce la ruta <span>→</span></a></div></div><div class="hero-stamp"><strong>8</strong><span>días<br />inolvidables</span></div><div class="hero-footer shell"><span>Lima · Paracas · Ica · Cusco · Machu Picchu</span><span>2026</span></div></section>
+<section class="intro shell" id="experiencia"><div><p class="kicker">Una experiencia con sentido</p><h2>Perú no solo se visita.<br />Se <em>vive</em>.</h2></div><div class="intro-text"><p>Diseñamos experiencias que conectan con la historia, la naturaleza y la identidad del Perú. Cada trayecto está pensado para que disfrutes con tranquilidad, acompañamiento y tiempo para asombrarte.</p><a class="arrow-link" href="#itinerario">Descubre el recorrido <span>→</span></a></div></section>
+<section class="route-section" id="itinerario"><div class="route-bg" role="img" aria-label="Machu Picchu entre las montañas"></div><div class="route-shade"></div><div class="route shell"><div class="route-heading"><p class="kicker light">La ruta completa</p><h2>Itinerario<br /><em>de viaje</em></h2></div><ol class="timeline">{itinerary.map(([day, title, text]) => <li><span class="day">Día <b>{day}</b></span><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol></div></section>
+<section class="moments shell"><div class="moments-heading"><p class="kicker">Una ruta, muchos paisajes</p><h2>Momentos que se quedan <em>contigo.</em></h2></div><div class="photo-grid"><figure class="photo photo-large"><img src="/images/journey/vinicunca.jpg" alt="Viajeros en la Montaña de 7 Colores" /><figcaption>Vinicunca · Día 07</figcaption></figure><figure class="photo photo-tall"><img src="/images/journey/andes-culture.jpg" alt="Cultura viva en los Andes peruanos" /><figcaption>La esencia de los Andes</figcaption></figure><figure class="photo"><img src="/images/journey/machu-picchu.jpg" alt="Machu Picchu" /><figcaption>Machu Picchu · Día 05</figcaption></figure><figure class="photo"><img src="/images/journey/travelers.jpg" alt="Grupo en la Montaña de 7 Colores" /><figcaption>Viajar juntos</figcaption></figure></div></section>
+<section class="included-section"><div class="shell included-grid"><div class="included-copy"><p class="kicker light">Todo listo para partir</p><h2>Tu viaje,<br /><em>bien acompañado.</em></h2><p>Una experiencia organizada con detalle para que solo te preocupes por disfrutar cada destino.</p></div><ul>{included.map((item) => <li><span>✓</span>{item}</li>)}</ul></div></section>
+<section class="pricing shell" id="precios"><div class="pricing-head"><p class="kicker">Salidas 2026</p><h2>Elige cómo quieres vivir <em>Perú.</em></h2><p>Precios por persona en habitación doble, matrimonial o triple.</p></div><div class="pricing-card"><div class="pricing-title"><span>Perú Tradicional</span><strong>08D / 07N</strong><small>Servicio grupal</small></div><div class="rates"><div><span>Sin hotel</span><b>799 <small>USD</small></b></div><div><span>Tour + hotel 2★</span><b>989 <small>USD</small></b></div><div><span>Tour + hotel 3★</span><b>1,049 <small>USD</small></b></div><div><span>Hotel 3★ superior</span><b>1,169 <small>USD</small></b></div><div class="featured"><span>Tour + hotel 4★</span><b>1,289 <small>USD</small></b></div></div><div class="deposit"><span>Separa tu viaje soñado desde</span><b>20%</b><a href="#contacto">Solicitar disponibilidad <span>→</span></a></div></div><div class="extras"><span class="extra-label">Extras disponibles</span><p><b>Vistadome / Observatory 360°</b> +45 USD (ida o vuelta)</p><p><b>Ingreso a Wayna Picchu</b> +60 USD (no incluye guía)</p></div></section>
+<section class="gift"><div class="gift-image" role="img" aria-label="Laguna Humantay"></div><div class="gift-copy"><p class="kicker light">Un detalle de Perú Beyond</p><h2>Por tu compra,<br />te regalamos una<br /><em>experiencia.</em></h2><p>Elige entre preparar un Pisco Sour o pintar un Torito de Pucará, símbolo de protección, abundancia y felicidad en los Andes.</p></div></section>
+<Reviews />
+<section class="contact shell" id="contacto"><p class="kicker">Tu próxima historia empieza aquí</p><h2>¿Listo para conocer <em>Perú?</em></h2><p>Consulta fechas disponibles, hoteles y formas de pago con un asesor de viajes.</p><a href="mailto:reservas@perubeyond.com" class="button button-dark">Quiero cotizar mi viaje <span>↗</span></a></section>
+</main><footer><a class="brand" href="#inicio"><span class="brand-mark">PB</span><span>PERÚ <b>BEYOND</b></span></a><p>Más que experiencias, recuerdos y momentos.</p><span>© {new Date().getFullYear()} Perú Beyond</span></footer></Layout>

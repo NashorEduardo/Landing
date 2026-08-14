@@ -1,0 +1,68 @@
+---
+const placeId = 'ChIJK_vMJWBfiioRH9_2oYWbNhY';
+const reviews = [
+  { name: 'Jhadira Ccahuana', initials: 'JC', color: '#8B7355', time: 'Hace 4 meses', text: 'Para mi viaje a Sillustani, en Puno, elegí Peru Beyond y fue mi mejor decisión. Tienen un servicio excelente y transmiten mucha confianza con su trato cálido y amable.' },
+  { name: 'Tony MCh', initials: 'TM', color: '#1A5276', time: 'Hace 3 meses', text: '¡Excelente experiencia con Peru Beyond! Viajé con ellos por Cusco y fue una de las mejores decisiones que tomé. Desde el primer contacto todo estuvo muy bien organizado.' },
+  { name: 'José PC', initials: 'JP', color: '#2E7D6B', time: 'Hace 3 meses', text: 'Tuve una excelente experiencia con Peru Beyond en mi viaje a Arequipa. La agencia organizó todo de forma muy profesional: visitamos la Plaza de Armas, el Mirador de Yanahuara y los principales atractivos de la ciudad.' },
+  { name: 'Milton Caceres Quispe', initials: 'MC', color: '#C0392B', time: 'Hace 6 meses', text: 'Mi experiencia con Peru Beyond en el tour a las Salineras de Maras fue excepcional. Cuidaron cada detalle, desde la reserva hasta el final de la actividad, con un servicio amable y claro.' },
+  { name: 'Williams Morocco Gutierrez', initials: 'WM', color: '#6C3483', time: 'Hace 2 meses', text: '¡Un viaje absolutamente inolvidable con Peru Beyond a las Salineras de Maras! El equipo manejó cada detalle del tour a la perfección, desde la reserva hasta el retorno.' },
+  { name: 'Maria Camila Pancca Huaman', initials: 'MP', color: '#5B8A6F', time: 'Hace 3 meses', text: 'Tuve una experiencia muy agradable con Peru Beyond en mi viaje a Cusco. El servicio fue puntual y con un alto nivel de profesionalismo. Visitamos lugares increíbles como Sacsayhuamán y Qorikancha.' },
+  { name: 'Jhoans Yampier Quispe Mamani', initials: 'JQ', color: '#A9762C', time: 'Hace 4 meses', text: 'Peru Beyond me dio una experiencia de viaje maravillosa. Desde el inicio, el equipo me hizo sentir bienvenido y bien atendido. El personal fue muy amable y profesional.' },
+];
+---
+
+<section class="reviews" id="resenas">
+  <div class="shell">
+    <header class="reviews-heading"><p class="kicker">Reseñas verificadas</p><h2>Historias de quienes ya<br /><em>viajaron con nosotros.</em></h2></header>
+    <div class="review-widget">
+      <aside class="review-summary">
+        <span class="google-word"><b>G</b> Google</span>
+        <strong>4.9</strong>
+        <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p>Basado en 128 reseñas</p>
+        <a href={`https://search.google.com/local/writereview?placeid=${placeId}`} target="_blank" rel="noopener noreferrer">Escribe una reseña <span>↗</span></a>
+      </aside>
+      <div class="review-carousel">
+        <button class="review-nav previous" aria-label="Ver reseñas anteriores">←</button>
+        <div class="review-viewport">
+          <div class="review-track">
+            {reviews.map((review) => <article class="review-card">
+              <header><span class="avatar" style={`background:${review.color}`}>{review.initials}</span><span class="reviewer"><b>{review.name}</b><small>{review.time}</small></span><span class="google-g">G</span></header>
+              <div class="card-stars">★★★★★ <span>✓</span></div>
+              <p>{review.text}</p>
+            </article>)}
+          </div>
+        </div>
+        <button class="review-nav next" aria-label="Ver más reseñas">→</button>
+      </div>
+    </div>
+    <a class="all-reviews" href={`https://search.google.com/local/reviews?placeid=${placeId}`} target="_blank" rel="noopener noreferrer">Ver las 128 reseñas en Google <span>→</span></a>
+  </div>
+</section>
+
+<style>
+  .reviews{padding-block:130px;background:var(--paper)} .reviews-heading{text-align:center;margin-bottom:48px}.reviews-heading h2{font-size:clamp(2.6rem,5vw,4.6rem);letter-spacing:-.055em}.review-widget{padding:28px;background:#f1f3f4;display:flex;gap:26px;border:1px solid #e4e6e7;box-shadow:0 18px 45px rgba(13,45,73,.08)}.review-summary{width:190px;flex:none;display:flex;align-items:center;flex-direction:column;justify-content:center;text-align:center;border-right:1px solid #d9dddf;padding-right:25px}.google-word{font-size:1rem;color:#5f6368}.google-word b,.google-g{color:#4285f4;font-weight:800}.review-summary strong{margin-top:8px;font:3.3rem var(--serif);line-height:1;color:#202124}.stars,.card-stars{color:#fbbc04;letter-spacing:2px}.review-summary p{margin:7px 0 18px;color:#5f6368;font-size:.74rem}.review-summary a,.all-reviews{font-size:.73rem;font-weight:800;border:1px solid #b9bfc3;padding:10px 13px;background:white}.review-summary a span,.all-reviews span{color:var(--sand);font-size:1rem}.review-carousel{display:flex;align-items:center;gap:10px;min-width:0;flex:1}.review-viewport{overflow:hidden;flex:1}.review-track{display:flex;gap:14px;transition:transform .35s ease}.review-card{flex:0 0 calc((100% - 28px)/3);min-height:213px;background:white;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,.11)}.review-card header{display:flex;align-items:center;gap:10px}.avatar{height:40px;width:40px;border-radius:50%;display:grid;place-items:center;color:white;font-size:.77rem;font-weight:800;flex:none}.reviewer{display:grid;gap:1px;min-width:0}.reviewer b{font-size:.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.reviewer small{color:#7a7f84;font-size:.68rem}.google-g{margin-left:auto;font-size:1.15rem}.card-stars{margin-top:15px;font-size:.85rem}.card-stars span{margin-left:5px;background:#4285f4;color:white;border-radius:50%;font-size:.62rem;padding:1px 3px}.review-card p{margin:12px 0 0;color:#4d555a;font-size:.76rem;line-height:1.55}.review-nav{flex:none;width:35px;height:35px;border:1px solid #ccd1d4;border-radius:50%;background:white;color:var(--ink);font-size:1rem;cursor:pointer}.review-nav:hover{background:var(--ink);color:white}.all-reviews{display:table;margin:25px auto 0}.all-reviews:hover{background:var(--ink);color:white}@media(max-width:850px){.review-widget{display:block}.review-summary{width:auto;padding:0 0 22px;border:0;border-bottom:1px solid #d9dddf;margin-bottom:22px}.review-card{flex-basis:calc((100% - 14px)/2)}}@media(max-width:560px){.reviews{padding-block:85px}.review-widget{padding:16px}.review-card{flex-basis:100%}.review-nav{display:none}}
+</style>
+
+<script>
+  const root = document.currentScript?.closest('body') ?? document.body;
+  const track = document.querySelector('.review-track') as HTMLElement;
+  const prev = document.querySelector('.review-nav.previous') as HTMLButtonElement;
+  const next = document.querySelector('.review-nav.next') as HTMLButtonElement;
+  let current = 0;
+  const visible = () => innerWidth <= 560 ? 1 : innerWidth <= 850 ? 2 : 3;
+  const update = () => {
+    if (!track) return;
+    const cards = track.querySelectorAll('.review-card');
+    const card = cards[0] as HTMLElement;
+    const maximum = Math.max(0, cards.length - visible());
+    current = Math.min(current, maximum);
+    track.style.transform = `translateX(-${current * (card.offsetWidth + 14)}px)`;
+    prev.disabled = current === 0;
+    next.disabled = current === maximum;
+  };
+  prev?.addEventListener('click', () => { current--; update(); });
+  next?.addEventListener('click', () => { current++; update(); });
+  addEventListener('resize', update);
+  update();
+</script>

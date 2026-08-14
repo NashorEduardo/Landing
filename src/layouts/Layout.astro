@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title,
-  description = 'Cuzco Imperial & Machu Picchu — 5 días y 4 noches en la capital arqueológica de América, desde $899 USD.',
+  description = 'Perú Tradicional: 8 días y 7 noches por Lima, Paracas, Cusco y Machu Picchu.',
 } = Astro.props;
 ---
 
@@ -19,10 +19,8 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0F172A" />
+    <meta name="theme-color" content="#173d5b" />
     <title>{title}</title>
   </head>
-  <body>
-    <slot />
-  </body>
+  <body><slot /></body>
 </html>
